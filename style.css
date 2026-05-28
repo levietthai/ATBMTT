@@ -1568,3 +1568,228 @@ body.light-theme .stat-box {
   border-color: rgba(15, 23, 42, 0.06);
 }
 
+/* ==========================================================================
+   CHAPTERS SELECTION GRID CARD STYLING
+   ========================================================================== */
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Base Chapter Card styles */
+.chapter-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.chapter-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.chapter-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.chapter-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.chapter-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.chapter-number {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.chapter-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  transition: all 0.3s ease;
+}
+
+.chapter-qcount {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Chapter Card Hover State */
+.chapter-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 242, 254, 0.35);
+  background: rgba(0, 242, 254, 0.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.chapter-card:hover .chapter-card-glow {
+  opacity: 1;
+}
+
+.chapter-card:hover .chapter-icon {
+  background: rgba(0, 242, 254, 0.08);
+  border-color: rgba(0, 242, 254, 0.2);
+  color: var(--color-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+  transform: scale(1.05);
+}
+
+/* Chapter Card Active State */
+.chapter-card.active {
+  border-color: var(--color-cyan);
+  background: rgba(0, 242, 254, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.12), inset 0 0 12px rgba(0, 242, 254, 0.08);
+}
+
+.chapter-card.active .chapter-card-glow {
+  opacity: 1;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.12) 0%, transparent 60%);
+}
+
+.chapter-card.active .chapter-icon {
+  background: var(--color-cyan);
+  border-color: var(--color-cyan);
+  color: var(--bg-primary);
+  box-shadow: var(--shadow-glow-cyan);
+  transform: scale(1.05);
+}
+
+.chapter-card.active .chapter-number {
+  color: var(--color-cyan);
+  text-shadow: 0 0 5px rgba(0, 242, 254, 0.25);
+}
+
+/* Final Exam Card Customization */
+.chapter-card.final-exam-card {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.05) 0%, rgba(0, 242, 254, 0.05) 100%);
+  border-color: rgba(79, 172, 254, 0.15);
+}
+
+.chapter-card.final-exam-card:hover {
+  border-color: rgba(0, 242, 254, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.18);
+}
+
+.chapter-card.final-exam-card.active {
+  background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
+  border-color: var(--color-cyan);
+  box-shadow: 0 4px 25px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(0, 242, 254, 0.1);
+}
+
+.chapter-card.final-exam-card.active .chapter-icon {
+  background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-blue) 100%);
+  border-color: var(--color-cyan);
+  color: var(--bg-primary);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.chapter-card.final-exam-card.active .chapter-number {
+  color: var(--color-blue);
+  text-shadow: 0 0 5px rgba(79, 172, 254, 0.25);
+}
+
+/* Light Theme overrides for Chapter Cards */
+body.light-theme .chapter-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(15, 23, 42, 0.07);
+}
+
+body.light-theme .chapter-card:hover {
+  background: rgba(2, 132, 199, 0.02);
+  border-color: rgba(2, 132, 199, 0.3);
+}
+
+body.light-theme .chapter-card.active {
+  background: rgba(2, 132, 199, 0.04);
+  border-color: var(--color-cyan);
+}
+
+body.light-theme .chapter-icon {
+  background: rgba(15, 23, 42, 0.03);
+  border-color: rgba(15, 23, 42, 0.05);
+}
+
+body.light-theme .chapter-card.active .chapter-icon {
+  background: var(--color-cyan);
+  color: #ffffff;
+}
+
+body.light-theme .chapter-card.final-exam-card {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.03) 0%, rgba(0, 242, 254, 0.03) 100%);
+}
+
+/* Old Chapter Card Customization (Heritage Neon Purple) */
+.chapter-card.old-chapter-card {
+  background: linear-gradient(135deg, rgba(224, 64, 251, 0.05) 0%, rgba(79, 172, 254, 0.05) 100%);
+  border-color: rgba(224, 64, 251, 0.15);
+}
+
+.chapter-card.old-chapter-card:hover {
+  border-color: rgba(224, 64, 251, 0.5);
+  box-shadow: 0 8px 30px rgba(224, 64, 251, 0.18);
+}
+
+.chapter-card.old-chapter-card.active {
+  background: linear-gradient(135deg, rgba(224, 64, 251, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
+  border-color: #e040fb;
+  box-shadow: 0 4px 25px rgba(224, 64, 251, 0.2), inset 0 0 15px rgba(224, 64, 251, 0.1);
+}
+
+.chapter-card.old-chapter-card.active .chapter-icon {
+  background: linear-gradient(135deg, #e040fb 0%, var(--color-blue) 100%);
+  border-color: #e040fb;
+  color: var(--bg-primary);
+  box-shadow: 0 0 15px rgba(224, 64, 251, 0.35);
+}
+
+.chapter-card.old-chapter-card.active .chapter-number {
+  color: #e040fb;
+  text-shadow: 0 0 5px rgba(224, 64, 251, 0.25);
+}
+
+body.light-theme .chapter-card.old-chapter-card {
+  background: linear-gradient(135deg, rgba(224, 64, 251, 0.03) 0%, rgba(2, 132, 199, 0.03) 100%);
+}
+

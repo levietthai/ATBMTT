@@ -95,10 +95,140 @@
           <h2 class="section-title">Cấu Hình Phòng Thi</h2>
 
           <div class="control-group">
-            <label class="control-label">Chương ôn tập:</label>
-            <div class="segmented-control" id="chapter-select">
-              <button class="segmented-btn active" data-value="1">Chương 1: Tổng quan</button>
-              <button class="segmented-btn" data-value="2">Chương 2: Mật mã học</button>
+            <label class="control-label">Nội dung ôn tập:</label>
+            <div class="chapters-grid" id="chapter-select-grid">
+              <div class="chapter-card active" data-value="1">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 1</div>
+                  <div class="chapter-name">Tổng quan An toàn thông tin</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="2">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 2</div>
+                  <div class="chapter-name">Mật mã học cơ bản</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="3">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 3</div>
+                  <div class="chapter-name">Mã hóa khối (DES/AES)</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="4">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3.5A2.5 2.5 0 0 1 6.5 1M20 3.5V17M14 3v4M10 5h8"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 4</div>
+                  <div class="chapter-name">Mã khóa công khai (RSA)</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="5">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 5</div>
+                  <div class="chapter-name">Hàm băm & Chữ ký số</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="6">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 6</div>
+                  <div class="chapter-name">An toàn thư điện tử</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="7">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 7</div>
+                  <div class="chapter-name">An toàn tầng IP (IPSec)</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card" data-value="8">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Chương 8</div>
+                  <div class="chapter-name">An toàn Web & SSL/TLS</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+
+              <!-- CŨ - 1 & CŨ - 2 CO-OPTIONS -->
+              <div class="chapter-card old-chapter-card" data-value="old_c1">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Cũ - 1</div>
+                  <div class="chapter-name">Đề cũ Chương 1</div>
+                  <div class="chapter-qcount">20 Câu hỏi</div>
+                </div>
+              </div>
+
+              <div class="chapter-card old-chapter-card" data-value="old_c2">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Cũ - 2</div>
+                  <div class="chapter-name">Đề cũ Chương 2</div>
+                  <div class="chapter-qcount">40 Câu hỏi</div>
+                </div>
+              </div>
+              
+              <div class="chapter-card final-exam-card" data-value="final">
+                <div class="chapter-card-glow"></div>
+                <div class="chapter-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="chapter-card-info">
+                  <div class="chapter-number">Đề thi gộp</div>
+                  <div class="chapter-name">ÔN TẬP CUỐI KỲ</div>
+                  <div class="chapter-qcount">320 Câu hỏi (Tổng hợp)</div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -308,6 +438,7 @@
     </footer>
   </div>
 
+  <script src="questions.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
