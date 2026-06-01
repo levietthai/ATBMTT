@@ -411,6 +411,66 @@ function setupEventListeners() {
     AudioSynth.play('click');
     showScreen('welcome-screen');
   });
+
+  // Global Keyboard Shortcuts for seamless navigation
+  document.addEventListener('keydown', (e) => {
+    // 1. If on welcome screen
+    const welcomeScreen = document.getElementById('welcome-screen');
+    if (welcomeScreen && welcomeScreen.classList.contains('active')) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const startBtn = document.getElementById('start-game-btn');
+        if (startBtn) startBtn.click();
+      }
+      return;
+    }
+
+    // 2. If on quiz screen
+    const quizScreen = document.getElementById('quiz-screen');
+    if (quizScreen && quizScreen.classList.contains('active')) {
+      // Enter to go to the next question or view results (only if answered)
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (gameState.isAnswered()) {
+          const nextBtn = document.getElementById('next-question-btn');
+          if (nextBtn && !nextBtn.classList.contains('inactive')) {
+            nextBtn.click();
+          }
+        }
+        return;
+      }
+
+      // Keys to select options A, B, C, D (either A/B/C/D or 1/2/3/4)
+      if (!gameState.isAnswered()) {
+        const key = e.key.toUpperCase();
+        if (key === 'A' || e.key === '1') {
+          e.preventDefault();
+          handleOptionSelection('A');
+        } else if (key === 'B' || e.key === '2') {
+          e.preventDefault();
+          handleOptionSelection('B');
+        } else if (key === 'C' || e.key === '3') {
+          e.preventDefault();
+          handleOptionSelection('C');
+        } else if (key === 'D' || e.key === '4') {
+          e.preventDefault();
+          handleOptionSelection('D');
+        }
+      }
+      return;
+    }
+
+    // 3. If on result screen
+    const resultScreen = document.getElementById('result-screen');
+    if (resultScreen && resultScreen.classList.contains('active')) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const restartBtn = document.getElementById('restart-game-btn');
+        if (restartBtn) restartBtn.click();
+      }
+      return;
+    }
+  });
 }
 
 function updateWelcomeText() {
